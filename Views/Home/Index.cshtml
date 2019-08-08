@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<p>Current time and date:</p>
+@ViewBag.Time
+<h1>Here are some delicious foods!</h1>
+    @{
+        var FoodList = new List<string>
+        {
+            "Apple Pie",
+            "Burritos",
+            "Clams Casino",
+            "Donuts"
+        };
+        char C = 'C';
+        foreach(var food in FoodList)
+        {
+            <div>
+                @if(food[0] == C)
+                {
+                    <p><span style="color:red">@food</span></p>
+                }
+                else
+                {
+                    <p>@food</p>
+                }
+            </div>
+        }
+    }
